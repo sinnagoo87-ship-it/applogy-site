@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>APPLOGY 못난이 사과 10kg 주문</title>
-<meta property="og:title" content="APPLOGY 못난이 사과 · 청송 부사 10kg 40,000원 (택배비 포함)">
+<title>APPLOGY 청송 부사 10kg 주문</title>
+<meta property="og:title" content="APPLOGY 청송 부사 10kg · 선물용 70,000원 / 못난이 40,000원 (택배비 포함)">
 <meta property="og:description" content="부모님이 직접 농사지은 청송 부사. 여기서 바로 주문하세요.">
 <meta property="og:image" content="https://applogy.kr/order_apple.jpg">
 <meta property="og:type" content="website">
@@ -23,10 +23,14 @@
   .head{padding:20px 20px 4px}
   .head .k{font-size:15px;color:var(--sub);font-weight:500}
   .head h1{font-size:25px;line-height:1.3;margin:2px 0 12px;font-weight:800;letter-spacing:-.01em}
-  .price{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:12px}
-  .price b{font-size:34px;font-weight:800;letter-spacing:-.02em}
-  .price b.r{color:var(--red)}
-  .spec{display:flex;justify-content:space-between;font-size:15px;margin-top:2px}
+  .pick{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:14px}
+  .popt{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--line);border-radius:12px;padding:13px 14px;cursor:pointer;margin:0}
+  .popt input{width:22px;height:22px;flex:none;accent-color:var(--red);margin:0}
+  .popt .nm{flex:1;font-size:19px;font-weight:800;line-height:1.3}
+  .popt .nm small{display:block;font-size:14px;font-weight:500;color:var(--sub)}
+  .popt b{font-size:22px;font-weight:800;color:var(--red);white-space:nowrap}
+  .popt:has(input:checked){border-color:var(--red);background:#FFF8F6}
+  .spec{display:flex;justify-content:space-between;font-size:15px;margin-top:10px}
   .spec span:last-child{color:var(--red);font-weight:700}
   .limit{margin:16px 20px 0;border:2px solid var(--red);border-radius:10px;color:var(--red);font-weight:700;
     text-align:center;padding:10px 12px;font-size:15.5px}
@@ -71,18 +75,21 @@
 </style>
 </head>
 <body>
-<div class="brand"><a href="/" aria-label="APPLOGY 홈으로"><b>Applogy</b><span>못난이 사과</span></a></div>
+<div class="brand"><a href="/" aria-label="APPLOGY 홈으로"><b>Applogy</b><span>청송 부사 10kg</span></a></div>
 <div class="wrap">
   <img class="photo" src="order_apple.jpg" alt="난좌에 담긴 청송 부사 흠과">
   <div class="head">
-    <div class="k">부모님이 직접 농사지은 청송 부사</div>
-    <h1>못난이 사과 · 가정용 흠과</h1>
-    <div class="price"><b>10kg</b><b class="r">40,000원</b></div>
-    <div class="spec"><span>2단 포장 · 34~40과</span><span>택배비 포함</span></div>
+    <div class="k">부모님이 직접 농사지은</div>
+    <h1>청송 부사 10kg</h1>
+    <div class="pick" role="radiogroup" aria-label="상품 선택">
+      <label class="popt"><input type="radio" name="prod" value="못난이" checked><span class="nm">못난이(흠과)<small>가정용 · 2단 34~40과</small></span><b>40,000원</b></label>
+      <label class="popt"><input type="radio" name="prod" value="선물용"><span class="nm">선물용<small>흠 없는 사과</small></span><b>70,000원</b></label>
+    </div>
+    <div class="spec"><span>10kg 한 상자 기준</span><span>택배비 포함</span></div>
   </div>
-  <div class="limit">양이 많지 않아 50상자 정도만 받습니다</div>
+  <div class="limit">못난이는 50상자 정도만 받습니다</div>
   <details>
-    <summary>왜 갈라졌나요? 맛은 괜찮나요?</summary>
+    <summary>못난이는 왜 갈라졌나요? 맛은 괜찮나요?</summary>
     <p>수확 무렵 비가 오면 속살이 물을 먹고 커지는데, 껍질이 그 속도를 못 따라가 꼭지 쪽이 터집니다. '열과'라고 하며 잘 익은 부사에서 흔합니다.</p>
     <p>맛과 당도는 차이가 없습니다. 모양과 껍질 때문에 선물용에서 빠졌을 뿐입니다.</p>
     <p>갈라진 사과는 틈부터 무르기 쉬우니 먼저 드시고, 받으시면 냉장 보관해 주세요. 세척·광택 처리 없이 보내니 씻어서 드세요. 가정용입니다.</p>
@@ -111,7 +118,7 @@
     <div id="pc"></div>
     <input type="text" id="addr2" placeholder="상세 주소 (동·호수)" maxlength="60" style="margin-top:8px" autocomplete="off">
 
-    <h2 class="sp">수량</h2>
+    <h2 class="sp">수량 <span id="pname" style="font-weight:500;color:var(--sub);font-size:15px">· 못난이</span></h2>
     <div class="qty">
       <button type="button" id="minus" aria-label="한 상자 줄이기">−</button>
       <output id="q">1</output>
@@ -150,12 +157,16 @@
   var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSe7wc5ruX4WOOcMSOmp_wO76ank-y2NPBCp7QYcK3JOICDZqg/formResponse';
   var E = { oname:'entry.986738315', ophone:'entry.744559782', rname:'entry.652672960', rphone:'entry.847154553',
             addr:'entry.333321816', qty:'entry.1858910001', memo:'entry.2123096425' };
-  var PRICE = 40000, MAXQ = 10;
+  var PRICES = { '못난이': 40000, '선물용': 70000 }, PRICE = 40000, PROD = '못난이', MAXQ = 10;
   var $ = function(id){ return document.getElementById(id); };
   var qty = 1, zip = '';
 
   function won(n){ return n.toLocaleString('ko-KR') + '원'; }
   function setQty(n){ qty = Math.min(MAXQ, Math.max(1, n)); $('q').textContent = qty; $('sum').textContent = won(qty * PRICE); }
+  Array.prototype.forEach.call(document.getElementsByName('prod'), function(r){
+    r.onchange = function(){ PROD = r.value; PRICE = PRICES[PROD]; $('pname').textContent = '· ' + PROD; setQty(qty); };
+    if (r.checked) { PROD = r.value; PRICE = PRICES[PROD]; }
+  });
   $('minus').onclick = function(){ setQty(qty - 1); };
   $('plus').onclick = function(){ setQty(qty + 1); };
 
@@ -215,7 +226,8 @@
     var o = {
       oname: val('oname'), ophone: val('ophone'),
       rname: same ? val('oname') : val('rname'), rphone: same ? val('ophone') : val('rphone'),
-      addr: val('addr1') + ' ' + val('addr2'), qty: String(qty), memo: val('memo')
+      addr: val('addr1') + ' ' + val('addr2'), qty: String(qty), prod: PROD, price: PRICE,
+      memo: ('[' + PROD + '] ' + val('memo')).trim()
     };
     var body = new URLSearchParams();
     Object.keys(E).forEach(function(k){ body.append(E[k], o[k]); });
@@ -228,8 +240,9 @@
 
   function showDone(o){
     var rows = [['받으시는 분', o.rname + ' · ' + o.rphone], ['주소', o.addr],
-                ['수량 · 금액', o.qty + '상자 · ' + won(Number(o.qty) * PRICE)]];
-    if (o.memo) rows.push(['배송 메모', o.memo]);
+                ['상품 · 금액', o.prod + ' ' + o.qty + '상자 · ' + won(Number(o.qty) * o.price)]];
+    var m = o.memo.replace(/^\[[^\]]+\]\s*/, '');
+    if (m) rows.push(['배송 메모', m]);
     var dl = $('recap'); dl.textContent = '';
     rows.forEach(function(r){
       var dt = document.createElement('dt'), dd = document.createElement('dd');
