@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APPLOGY 못난이 사과 10kg 주문</title>
+<meta property="og:title" content="APPLOGY 못난이 사과 · 청송 부사 10kg 40,000원 (택배비 포함)">
+<meta property="og:description" content="부모님이 직접 농사지은 청송 부사. 여기서 바로 주문하세요.">
+<meta property="og:image" content="https://applogy.kr/order_apple.jpg">
+<meta property="og:type" content="website">
+<style>
+  :root{ --red:#B01E24; --ink:#28201C; --sub:#6E645C; --cream:#FAF5EB; --card:#FFFFFF; --line:#DDD3C2; --err:#B01E24; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;font-size:17px;line-height:1.55;
+    -webkit-text-size-adjust:100%}
+  .wrap{max-width:560px;margin:0 auto;padding:0 0 40px}
+  .brand{background:#14110D;border-bottom:1px solid rgba(185,138,47,.45)}
+  .brand a{display:flex;align-items:baseline;gap:10px;max-width:560px;margin:0 auto;padding:13px 20px;text-decoration:none}
+  .brand b{font-family:Georgia,serif;font-weight:400;font-size:22px;color:#E7CD8F;letter-spacing:.5px}
+  .brand span{font-size:11.5px;color:#9d947f;letter-spacing:.12em}
+  .photo{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;background:#e9dfcf}
+  .head{padding:20px 20px 4px}
+  .head .k{font-size:15px;color:var(--sub);font-weight:500}
+  .head h1{font-size:25px;line-height:1.3;margin:2px 0 12px;font-weight:800;letter-spacing:-.01em}
+  .price{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:12px}
+  .price b{font-size:34px;font-weight:800;letter-spacing:-.02em}
+  .price b.r{color:var(--red)}
+  .spec{display:flex;justify-content:space-between;font-size:15px;margin-top:2px}
+  .spec span:last-child{color:var(--red);font-weight:700}
+  .limit{margin:16px 20px 0;border:2px solid var(--red);border-radius:10px;color:var(--red);font-weight:700;
+    text-align:center;padding:10px 12px;font-size:15.5px}
+  details{margin:14px 20px 0;font-size:15.5px;color:var(--ink)}
+  details summary{cursor:pointer;color:var(--red);font-weight:700;padding:6px 0}
+  details p{margin:6px 0 10px}
+  form{margin:22px 20px 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 18px 22px}
+  h2{font-size:18px;margin:0 0 12px;font-weight:800}
+  h2.sp{margin-top:26px}
+  label{display:block;font-size:15px;font-weight:600;margin:14px 0 6px}
+  label .opt{font-weight:400;color:var(--sub)}
+  input[type=text],input[type=tel],textarea{width:100%;font:inherit;font-size:17px;color:var(--ink);background:#fff;
+    border:1.5px solid var(--line);border-radius:10px;padding:13px 12px;outline:none}
+  input:focus,textarea:focus{border-color:var(--red)}
+  input[readonly]{background:#F6F1E7}
+  textarea{min-height:70px;resize:vertical}
+  .row{display:flex;gap:8px}
+  .row input{flex:1;min-width:0}
+  .btn2{flex:none;font:inherit;font-size:15.5px;font-weight:700;color:var(--red);background:#fff;border:1.5px solid var(--red);
+    border-radius:10px;padding:0 14px;cursor:pointer;white-space:nowrap}
+  .chk{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;font-weight:500;margin:14px 0 0;cursor:pointer}
+  .chk input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--red)}
+  .qty{display:flex;align-items:center;gap:14px}
+  .qty button{width:48px;height:48px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-size:24px;
+    line-height:1;color:var(--ink);cursor:pointer}
+  .qty output{font-size:22px;font-weight:800;min-width:34px;text-align:center}
+  .qty .sum{margin-left:auto;font-size:19px;font-weight:800;color:var(--red)}
+  .privacy{font-size:13.5px;color:var(--sub);background:#F6F1E7;border-radius:10px;padding:10px 12px;margin-top:8px;line-height:1.6}
+  .msg{color:var(--err);font-size:15px;font-weight:600;margin-top:14px;min-height:1.4em}
+  .go{width:100%;margin-top:8px;font:inherit;font-size:19px;font-weight:800;color:#fff;background:var(--red);border:0;
+    border-radius:12px;padding:16px;cursor:pointer}
+  .go[disabled]{opacity:.55}
+  #pc{display:none;border:1.5px solid var(--line);border-radius:10px;margin-top:8px;height:400px;overflow:hidden;position:relative}
+  #done{display:none;margin:22px 20px 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 20px}
+  #done h2{font-size:22px;color:var(--red)}
+  #done dl{margin:14px 0 0;font-size:15.5px}
+  #done dt{color:var(--sub);font-size:13.5px;margin-top:10px}
+  #done dd{margin:0;font-weight:600;word-break:keep-all}
+  #done .go{margin-top:22px}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  footer{margin:26px 20px 0;font-size:13px;color:var(--sub);line-height:1.7}
+</style>
+</head>
+<body>
+<div class="brand"><a href="/" aria-label="APPLOGY 홈으로"><b>Applogy</b><span>못난이 사과</span></a></div>
+<div class="wrap">
+  <img class="photo" src="order_apple.jpg" alt="난좌에 담긴 청송 부사 흠과">
+  <div class="head">
+    <div class="k">부모님이 직접 농사지은 청송 부사</div>
+    <h1>못난이 사과 · 가정용 흠과</h1>
+    <div class="price"><b>10kg</b><b class="r">40,000원</b></div>
+    <div class="spec"><span>2단 포장 · 34~40과</span><span>택배비 포함</span></div>
+  </div>
+  <div class="limit">양이 많지 않아 50상자 정도만 받습니다</div>
+  <details>
+    <summary>왜 갈라졌나요? 맛은 괜찮나요?</summary>
+    <p>수확 무렵 비가 오면 속살이 물을 먹고 커지는데, 껍질이 그 속도를 못 따라가 꼭지 쪽이 터집니다. '열과'라고 하며 잘 익은 부사에서 흔합니다.</p>
+    <p>맛과 당도는 차이가 없습니다. 모양과 껍질 때문에 선물용에서 빠졌을 뿐입니다.</p>
+    <p>갈라진 사과는 틈부터 무르기 쉬우니 먼저 드시고, 받으시면 냉장 보관해 주세요. 세척·광택 처리 없이 보내니 씻어서 드세요. 가정용입니다.</p>
+  </details>
+
+  <form id="f" novalidate>
+    <h2>주문하시는 분</h2>
+    <label for="oname">이름</label>
+    <input type="text" id="oname" autocomplete="name" maxlength="20">
+    <label for="ophone">연락처</label>
+    <input type="tel" id="ophone" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" maxlength="13">
+
+    <h2 class="sp">받으시는 분</h2>
+    <label class="chk"><input type="checkbox" id="same" checked><span>주문하는 분과 같습니다</span></label>
+    <div id="rbox" hidden>
+      <label for="rname">이름</label>
+      <input type="text" id="rname" maxlength="20">
+      <label for="rphone">연락처</label>
+      <input type="tel" id="rphone" inputmode="numeric" placeholder="010-0000-0000" maxlength="13">
+    </div>
+    <label for="addr1">주소</label>
+    <div class="row">
+      <input type="text" id="addr1" placeholder="주소 찾기를 눌러 주세요" readonly>
+      <button type="button" class="btn2" id="find">주소 찾기</button>
+    </div>
+    <div id="pc"></div>
+    <input type="text" id="addr2" placeholder="상세 주소 (동·호수)" maxlength="60" style="margin-top:8px" autocomplete="off">
+
+    <h2 class="sp">수량</h2>
+    <div class="qty">
+      <button type="button" id="minus" aria-label="한 상자 줄이기">−</button>
+      <output id="q">1</output>
+      <button type="button" id="plus" aria-label="한 상자 늘리기">+</button>
+      <span class="sum" id="sum">40,000원</span>
+    </div>
+
+    <label for="memo">배송 메모 <span class="opt">(선택)</span></label>
+    <textarea id="memo" maxlength="200" placeholder="예: 문 앞에 놓아 주세요"></textarea>
+
+    <input class="hp" type="text" id="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <label class="chk" style="margin-top:20px"><input type="checkbox" id="agree"><span>개인정보 수집·이용에 동의합니다</span></label>
+    <div class="privacy">수집 항목: 이름, 연락처, 주소 · 목적: 주문 접수와 택배 발송 · 보관: 배송과 정산이 끝나면 지웁니다. 동의하지 않으시면 주문을 받을 수 없습니다.</div>
+
+    <div class="msg" id="msg" role="alert"></div>
+    <button class="go" id="go" type="submit">주문 보내기</button>
+  </form>
+
+  <div id="done">
+    <h2>주문이 접수되었습니다</h2>
+    <p style="margin:8px 0 0">입금 계좌와 발송 일정은 카톡이나 문자로 따로 알려 드립니다.</p>
+    <dl id="recap"></dl>
+    <button class="go" id="again" type="button">다른 곳으로 한 건 더 보내기</button>
+  </div>
+
+  <footer>
+    APPLOGY 애플로지 · 사업자등록번호 310-95-05626<br>
+    생산: 경북 청송 부모님 농장 · <a href="/" style="color:inherit">applogy.kr</a>
+  </footer>
+</div>
+
+<script src="https://t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" async></script>
+<script>
+(function(){
+  var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSe7wc5ruX4WOOcMSOmp_wO76ank-y2NPBCp7QYcK3JOICDZqg/formResponse';
+  var E = { oname:'entry.986738315', ophone:'entry.744559782', rname:'entry.652672960', rphone:'entry.847154553',
+            addr:'entry.333321816', qty:'entry.1858910001', memo:'entry.2123096425' };
+  var PRICE = 40000, MAXQ = 10;
+  var $ = function(id){ return document.getElementById(id); };
+  var qty = 1, zip = '';
+
+  function won(n){ return n.toLocaleString('ko-KR') + '원'; }
+  function setQty(n){ qty = Math.min(MAXQ, Math.max(1, n)); $('q').textContent = qty; $('sum').textContent = won(qty * PRICE); }
+  $('minus').onclick = function(){ setQty(qty - 1); };
+  $('plus').onclick = function(){ setQty(qty + 1); };
+
+  function fmtPhone(el){
+    el.addEventListener('input', function(){
+      var d = el.value.replace(/\D/g, '').slice(0, 11), o = d;
+      if (d.length > 7) o = d.slice(0, 3) + '-' + d.slice(3, d.length - 4) + '-' + d.slice(-4);
+      else if (d.length > 3) o = d.slice(0, 3) + '-' + d.slice(3);
+      el.value = o;
+    });
+  }
+  fmtPhone($('ophone')); fmtPhone($('rphone'));
+
+  $('same').onchange = function(){ $('rbox').hidden = this.checked; };
+
+  function openPostcode(){
+    if (!(window.daum && daum.Postcode)) {       // 주소 검색을 못 불러오면 직접 입력으로 전환
+      $('addr1').readOnly = false; $('addr1').placeholder = '주소를 직접 입력해 주세요'; $('addr1').focus(); return;
+    }
+    var box = $('pc'); box.style.display = 'block';
+    new daum.Postcode({
+      oncomplete: function(d){
+        zip = d.zonecode;
+        $('addr1').value = '(' + d.zonecode + ') ' + (d.roadAddress || d.jibunAddress) + (d.buildingName ? ' (' + d.buildingName + ')' : '');
+        box.style.display = 'none'; $('addr2').focus();
+      },
+      width: '100%', height: '100%'
+    }).embed(box);
+    box.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+  $('find').onclick = openPostcode;
+  $('addr1').onclick = function(){ if (this.readOnly) openPostcode(); };
+
+  function val(id){ return $(id).value.trim(); }
+  function okPhone(v){ return v.replace(/\D/g, '').length >= 9; }
+
+  function check(){
+    if (!val('oname')) return ['oname', '주문하시는 분 이름을 적어 주세요.'];
+    if (!okPhone(val('ophone'))) return ['ophone', '주문하시는 분 연락처를 확인해 주세요.'];
+    if (!$('same').checked) {
+      if (!val('rname')) return ['rname', '받으시는 분 이름을 적어 주세요.'];
+      if (!okPhone(val('rphone'))) return ['rphone', '받으시는 분 연락처를 확인해 주세요.'];
+    }
+    if (!val('addr1')) return ['find', '주소 찾기를 눌러 주소를 넣어 주세요.'];
+    if (!val('addr2')) return ['addr2', '상세 주소(동·호수)를 적어 주세요. 없으면 "없음"이라고 적어 주세요.'];
+    if (!$('agree').checked) return ['agree', '개인정보 수집·이용에 동의해 주셔야 주문할 수 있습니다.'];
+    return null;
+  }
+
+  $('f').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var bad = check();
+    if (bad) { $('msg').textContent = bad[1]; $(bad[0]).focus(); return; }
+    if ($('web').value) return;                  // 자동 입력 프로그램 차단
+    $('msg').textContent = '';
+    var same = $('same').checked;
+    var o = {
+      oname: val('oname'), ophone: val('ophone'),
+      rname: same ? val('oname') : val('rname'), rphone: same ? val('ophone') : val('rphone'),
+      addr: val('addr1') + ' ' + val('addr2'), qty: String(qty), memo: val('memo')
+    };
+    var body = new URLSearchParams();
+    Object.keys(E).forEach(function(k){ body.append(E[k], o[k]); });
+    var go = $('go'); go.disabled = true; go.textContent = '보내는 중…';
+    fetch(FORM, { method: 'POST', mode: 'no-cors', body: body })
+      .then(function(){ showDone(o); })
+      .catch(function(){ $('msg').textContent = '전송하지 못했습니다. 인터넷 연결을 확인하고 다시 눌러 주세요.'; })
+      .then(function(){ go.disabled = false; go.textContent = '주문 보내기'; });
+  });
+
+  function showDone(o){
+    var rows = [['받으시는 분', o.rname + ' · ' + o.rphone], ['주소', o.addr],
+                ['수량 · 금액', o.qty + '상자 · ' + won(Number(o.qty) * PRICE)]];
+    if (o.memo) rows.push(['배송 메모', o.memo]);
+    var dl = $('recap'); dl.textContent = '';
+    rows.forEach(function(r){
+      var dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = r[0]; dd.textContent = r[1]; dl.appendChild(dt); dl.appendChild(dd);
+    });
+    $('f').style.display = 'none'; $('done').style.display = 'block';
+    $('done').scrollIntoView({ block: 'start' });
+  }
+
+  $('again').onclick = function(){               // 주문자 정보는 남기고 받는 분만 비움
+    ['rname', 'rphone', 'addr1', 'addr2', 'memo'].forEach(function(id){ $(id).value = ''; });
+    $('same').checked = false; $('rbox').hidden = false; setQty(1);
+    $('done').style.display = 'none'; $('f').style.display = 'block'; $('rname').focus();
+  };
+})();
+</script>
+</body>
+</html>
