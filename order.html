@@ -88,12 +88,12 @@
     <div class="k">부모님이 직접 농사지은</div>
     <h1>청송 부사 10kg</h1>
     <div class="pick" role="radiogroup" aria-label="상품 선택">
-      <label class="popt"><input type="radio" name="prod" value="못난이" checked><span class="nm">못난이(흠과)<small>가정용 · 2단 34~40과</small></span><b>40,000원</b></label>
-      <label class="popt"><input type="radio" name="prod" value="선물용"><span class="nm">선물용<small>흠 없는 사과</small></span><b>70,000원</b></label>
+      <label class="popt" style="opacity:.5;cursor:default"><input type="radio" name="prod" value="못난이" disabled><span class="nm">못난이(흠과)<small>마감되었습니다</small></span><b style="color:var(--sub)">마감</b></label>
+      <label class="popt"><input type="radio" name="prod" value="선물용" checked><span class="nm">선물용<small>흠 없는 사과</small></span><b>70,000원</b></label>
     </div>
     <div class="spec"><span>10kg 한 상자 기준</span><span>택배비 포함</span></div>
   </div>
-  <div class="limit">못난이는 50상자 정도만 받습니다</div>
+  <div class="limit">못난이(흠과)는 마감되었습니다. 감사합니다.</div>
   <details>
     <summary>못난이는 왜 갈라졌나요? 맛은 괜찮나요?</summary>
     <p>수확 무렵 비가 오면 속살이 물을 먹고 커지는데, 껍질이 그 속도를 못 따라가 꼭지 쪽이 터집니다. '열과'라고 하며 잘 익은 부사에서 흔합니다.</p>
@@ -126,7 +126,7 @@
     <div id="pc"></div>
     <input type="text" id="addr2" placeholder="상세 주소 (동·호수)" maxlength="60" style="margin-top:8px" autocomplete="off">
 
-    <h2 class="sp">수량 <span id="pname" style="font-weight:500;color:var(--sub);font-size:15px">· 못난이</span></h2>
+    <h2 class="sp">수량 <span id="pname" style="font-weight:500;color:var(--sub);font-size:15px">· 선물용</span></h2>
     <div class="qty">
       <button type="button" id="minus" aria-label="한 상자 줄이기">−</button>
       <output id="q">1</output>
@@ -172,7 +172,7 @@
   var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSe7wc5ruX4WOOcMSOmp_wO76ank-y2NPBCp7QYcK3JOICDZqg/formResponse';
   var E = { oname:'entry.986738315', ophone:'entry.744559782', rname:'entry.652672960', rphone:'entry.847154553',
             addr:'entry.333321816', qty:'entry.1858910001', memo:'entry.2123096425' };
-  var PRICES = { '못난이': 40000, '선물용': 70000 }, PRICE = 40000, PROD = '못난이', MAXQ = 10;
+  var PRICES = { '못난이': 40000, '선물용': 70000 }, PRICE = 70000, PROD = '선물용', MAXQ = 10;
   var $ = function(id){ return document.getElementById(id); };
   var qty = 1, zip = '';
 
