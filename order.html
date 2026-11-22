@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>APPLOGY 청송 부사 10kg 주문</title>
-<meta property="og:title" content="APPLOGY 청송 부사 10kg · 선물용 70,000원 / 못난이 40,000원 (택배비 포함)">
+<title>APPLOGY 청송 부사 주문</title>
+<meta property="og:title" content="APPLOGY 청송 부사 · 5kg 45,000원 / 10kg 75,000원 (택배비 포함)">
 <meta property="og:description" content="부모님이 직접 농사지은 청송 부사. 여기서 바로 주문하세요.">
-<meta property="og:image" content="https://applogy.kr/order_apple.jpg">
+<meta property="og:image" content="https://applogy.kr/order_farm.jpg">
 <meta property="og:type" content="website">
 <style>
   :root{ --red:#B01E24; --ink:#28201C; --sub:#6E645C; --cream:#FAF5EB; --card:#FFFFFF; --line:#DDD3C2; --err:#B01E24; }
@@ -32,6 +32,7 @@
   .popt:has(input:checked){border-color:var(--red);background:#FFF8F6}
   .spec{display:flex;justify-content:space-between;font-size:15px;margin-top:10px}
   .spec span:last-child{color:var(--red);font-weight:700}
+  .note{margin:14px 20px 0;font-size:15px;color:var(--sub)}
   .limit{margin:16px 20px 0;border:2px solid var(--red);border-radius:10px;color:var(--red);font-weight:700;
     text-align:center;padding:10px 12px;font-size:15.5px}
   details{margin:14px 20px 0;font-size:15.5px;color:var(--ink)}
@@ -81,25 +82,19 @@
 </style>
 </head>
 <body>
-<div class="brand"><a href="/" aria-label="APPLOGY 홈으로"><b>Applogy</b><span>청송 부사 10kg</span></a></div>
+<div class="brand"><a href="/" aria-label="APPLOGY 홈으로"><b>Applogy</b><span>청송 부사</span></a></div>
 <div class="wrap">
-  <img class="photo" src="order_apple.jpg" alt="난좌에 담긴 청송 부사 흠과">
+  <img class="photo" src="order_farm.jpg" alt="사과가 익은 청송 과수원">
   <div class="head">
     <div class="k">부모님이 직접 농사지은</div>
-    <h1>청송 부사 10kg</h1>
+    <h1>청송 부사</h1>
     <div class="pick" role="radiogroup" aria-label="상품 선택">
-      <label class="popt" style="opacity:.5;cursor:default"><input type="radio" name="prod" value="못난이" disabled><span class="nm">못난이(흠과)<small>마감되었습니다</small></span><b style="color:var(--sub)">마감</b></label>
-      <label class="popt"><input type="radio" name="prod" value="선물용" checked><span class="nm">선물용<small>흠 없는 사과</small></span><b>70,000원</b></label>
+      <label class="popt"><input type="radio" name="prod" value="5kg" checked><span class="nm">5kg<small>18과 안팎</small></span><b>45,000원</b></label>
+      <label class="popt"><input type="radio" name="prod" value="10kg"><span class="nm">10kg<small>36과 안팎</small></span><b>75,000원</b></label>
     </div>
-    <div class="spec"><span>10kg 한 상자 기준</span><span>택배비 포함</span></div>
+    <div class="spec"><span>한 상자 기준</span><span>택배비 포함</span></div>
   </div>
-  <div class="limit">못난이(흠과)는 마감되었습니다. 감사합니다.</div>
-  <details>
-    <summary>못난이는 왜 갈라졌나요? 맛은 괜찮나요?</summary>
-    <p>수확 무렵 비가 오면 속살이 물을 먹고 커지는데, 껍질이 그 속도를 못 따라가 꼭지 쪽이 터집니다. '열과'라고 하며 잘 익은 부사에서 흔합니다.</p>
-    <p>맛과 당도는 차이가 없습니다. 모양과 껍질 때문에 선물용에서 빠졌을 뿐입니다.</p>
-    <p>갈라진 사과는 틈부터 무르기 쉬우니 먼저 드시고, 받으시면 냉장 보관해 주세요. 세척·광택 처리 없이 보내니 씻어서 드세요. 가정용입니다.</p>
-  </details>
+  <p class="note">무게는 맞춰 담고, 사과 크기에 따라 개수는 조금 달라질 수 있습니다.</p>
 
   <form id="f" novalidate>
     <h2>주문하시는 분</h2>
@@ -126,12 +121,12 @@
     <div id="pc"></div>
     <input type="text" id="addr2" placeholder="상세 주소 (동·호수)" maxlength="60" style="margin-top:8px" autocomplete="off">
 
-    <h2 class="sp">수량 <span id="pname" style="font-weight:500;color:var(--sub);font-size:15px">· 선물용</span></h2>
+    <h2 class="sp">수량 <span id="pname" style="font-weight:500;color:var(--sub);font-size:15px">· 5kg</span></h2>
     <div class="qty">
       <button type="button" id="minus" aria-label="한 상자 줄이기">−</button>
       <output id="q">1</output>
       <button type="button" id="plus" aria-label="한 상자 늘리기">+</button>
-      <span class="sum" id="sum">40,000원</span>
+      <span class="sum" id="sum">45,000원</span>
     </div>
 
     <label for="memo">배송 메모 <span class="opt">(선택)</span></label>
@@ -172,7 +167,7 @@
   var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSe7wc5ruX4WOOcMSOmp_wO76ank-y2NPBCp7QYcK3JOICDZqg/formResponse';
   var E = { oname:'entry.986738315', ophone:'entry.744559782', rname:'entry.652672960', rphone:'entry.847154553',
             addr:'entry.333321816', qty:'entry.1858910001', memo:'entry.2123096425' };
-  var PRICES = { '못난이': 40000, '선물용': 70000 }, PRICE = 70000, PROD = '선물용', MAXQ = 10;
+  var PRICES = { '5kg': 45000, '10kg': 75000 }, PRICE = 45000, PROD = '5kg', MAXQ = 10;
   var $ = function(id){ return document.getElementById(id); };
   var qty = 1, zip = '';
 
