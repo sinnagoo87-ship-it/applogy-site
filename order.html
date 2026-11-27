@@ -259,16 +259,21 @@
   var E = { oname:'entry.986738315', ophone:'entry.744559782', rname:'entry.652672960', rphone:'entry.847154553',
             addr:'entry.333321816', qty:'entry.1858910001', memo:'entry.2123096425' };
   var PRICES = { '10kg 46과': 49000, '10kg 38과': 69000, '10kg 32과': 79000, '5kg 23과': 29000, '5kg 16과': 45000 };
-  var DISC = { '10kg 46과': 45000, '5kg 23과': 26000 };   // 이웃 할인코드가 맞을 때만 적용 (작은 사과만)
+  // 할인코드: 코드 글자는 소스에 두지 않고 해시만 둔다. tag는 장부 메모에 붙는 표시.
+  var CODESET = {
+    3355984641: { tag: '이웃', msg: '이웃 특가가 적용되었습니다. 한입(소과) 10kg·5kg이 할인됩니다.',
+                  d: { '10kg 46과': 45000, '5kg 23과': 26000 } },
+    2501639351: { tag: '친구', msg: '친구 할인이 적용되었습니다. 10kg 5,000원, 5kg 3,000원 할인됩니다.',
+                  d: { '10kg 46과': 44000, '10kg 38과': 64000, '10kg 32과': 74000, '5kg 23과': 26000, '5kg 16과': 42000 } }
+  };
   var NAMES = { '46과': '한입', '23과': '한입', '38과': '한손', '32과': '한아름', '16과': '한아름' };
-  var CODES = [3355984641];                               // 코드 글자는 소스에 두지 않고 해시만 둔다
-  var PRICE = 49000, PROD = '10kg 46과', MAXQ = 10, CODED = false;
+  var PRICE = 49000, PROD = '10kg 46과', MAXQ = 10, CUR = null;
   var $ = function(id){ return document.getElementById(id); };
   var qty = 1, zip = '';
 
   function won(n){ return n.toLocaleString('ko-KR') + '원'; }
   function setQty(n){ qty = Math.min(MAXQ, Math.max(1, n)); $('q').textContent = qty; $('sum').textContent = won(qty * PRICE); }
-  function off(k){ return CODED && DISC[k]; }
+  function off(k){ return CUR && CUR.d[k]; }
   function hash(t){ var h = 5381; for (var i = 0; i < t.length; i++) h = ((h * 33) ^ t.charCodeAt(i)) >>> 0; return h; }
   var radios = document.getElementsByName('prod');
   function paint(){                              // 상품별 가격 표시와 합계를 다시 그림
@@ -283,8 +288,8 @@
   Array.prototype.forEach.call(radios, function(r){ r.onchange = paint; });
   function applyCode(v, quiet){
     v = (v || '').replace(/\s/g, '').toUpperCase();
-    CODED = CODES.indexOf(hash(v)) >= 0;
-    $('codemsg').textContent = CODED ? '이웃 특가가 적용되었습니다. 한입(소과) 10kg·5kg이 할인됩니다.' : (v && !quiet ? '맞지 않는 코드입니다. 다시 확인해 주세요.' : '');
+    CUR = CODESET[hash(v)] || null;
+    $('codemsg').textContent = CUR ? CUR.msg : (v && !quiet ? '맞지 않는 코드입니다. 다시 확인해 주세요.' : '');
     paint();
   }
   $('codego').onclick = function(){ applyCode($('code').value); };
@@ -350,7 +355,7 @@
       oname: val('oname'), ophone: val('ophone'),
       rname: same ? val('oname') : val('rname'), rphone: same ? val('ophone') : val('rphone'),
       addr: val('addr1') + ' ' + val('addr2'), qty: String(qty), prod: PROD, price: PRICE,
-      memo: ('[' + PROD + (off(PROD) ? ' 이웃' : '') + '] ' + (val('payer') && val('payer') !== val('oname') ? '(입금:' + val('payer') + ') ' : '') + val('memo')).trim()
+      memo: ('[' + PROD + (off(PROD) ? ' ' + CUR.tag : '') + '] ' + (val('payer') && val('payer') !== val('oname') ? '(입금:' + val('payer') + ') ' : '') + val('memo')).trim()
     };
     var body = new URLSearchParams();
     Object.keys(E).forEach(function(k){ body.append(E[k], o[k]); });
