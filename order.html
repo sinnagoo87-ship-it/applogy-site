@@ -27,6 +27,7 @@
   .popt{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--line);border-radius:12px;padding:13px 14px;cursor:pointer;margin:0}
   .popt input{width:22px;height:22px;flex:none;accent-color:var(--red);margin:0}
   .popt .nm{flex:1;font-size:19px;font-weight:800;line-height:1.3}
+  .popt .nm i{font-style:normal;font-size:15px;font-weight:600;color:var(--sub)}
   .popt .nm small{display:block;font-size:14px;font-weight:500;color:var(--sub)}
   .popt b{font-size:22px;font-weight:800;color:var(--red);white-space:nowrap}
   .popt:has(input:checked){border-color:var(--red);background:#FFF8F6}
@@ -112,12 +113,12 @@
     <h1>청송 부사</h1>
     <div class="pick" role="radiogroup" aria-label="상품 선택">
       <div class="grp">10kg</div>
-      <label class="popt"><input type="radio" name="prod" value="10kg 46과" checked><span class="nm">꼬마 사과<small>46과 안팎 · 한 번에 한 개씩</small></span><b></b></label>
-      <label class="popt"><input type="radio" name="prod" value="10kg 38과"><span class="nm">소과<small>38과 안팎</small></span><b></b></label>
-      <label class="popt"><input type="radio" name="prod" value="10kg 32과"><span class="nm">중대과<small>32과 안팎 · 큰 사과</small></span><b></b></label>
+      <label class="popt"><input type="radio" name="prod" value="10kg 46과" checked><span class="nm">한입 <i>(소과)</i><small>46과 내외</small></span><b></b></label>
+      <label class="popt"><input type="radio" name="prod" value="10kg 38과"><span class="nm">한손 <i>(중과)</i><small>38과 내외</small></span><b></b></label>
+      <label class="popt"><input type="radio" name="prod" value="10kg 32과"><span class="nm">한아름 <i>(대과)</i><small>32과 내외</small></span><b></b></label>
       <div class="grp">5kg</div>
-      <label class="popt"><input type="radio" name="prod" value="5kg 23과"><span class="nm">꼬마 사과<small>23과 안팎</small></span><b></b></label>
-      <label class="popt"><input type="radio" name="prod" value="5kg 16과"><span class="nm">중대과<small>16과 안팎 · 큰 사과</small></span><b></b></label>
+      <label class="popt"><input type="radio" name="prod" value="5kg 23과"><span class="nm">한입 <i>(소과)</i><small>23과 내외</small></span><b></b></label>
+      <label class="popt"><input type="radio" name="prod" value="5kg 16과"><span class="nm">한아름 <i>(대과)</i><small>16과 내외</small></span><b></b></label>
     </div>
     <div class="code">
       <label for="code">할인코드 <span class="opt">(있으신 분만)</span></label>
@@ -141,26 +142,26 @@
     <section>
       <h2>크기 고르는 법</h2>
       <p>모두 흠 없는 정품이고, 맛은 같습니다. 크기만 다릅니다.</p>
-      <img src="detail_compare.jpg" alt="꼬마, 소과, 중대과 사과 크기 비교" loading="lazy">
-      <div class="cap">왼쪽부터 꼬마(46과) · 소과(38과) · 중대과(32과)</div>
+      <img src="detail_compare.jpg" alt="한입, 한손, 한아름 사과 크기 비교" loading="lazy">
+      <div class="cap">왼쪽부터 한입(소과) · 한손(중과) · 한아름(대과)</div>
       <table>
         <tr><th>크기</th><th>10kg</th><th>5kg</th><th>한 개 무게</th></tr>
-        <tr><td><b>꼬마 사과</b></td><td>46과 안팎</td><td>23과 안팎</td><td>220g쯤</td></tr>
-        <tr><td><b>소과</b></td><td>38과 안팎</td><td>—</td><td>260g쯤</td></tr>
-        <tr><td><b>중대과</b></td><td>32과 안팎</td><td>16과 안팎</td><td>310g쯤</td></tr>
+        <tr><td><b>한입</b> (소과)</td><td>46과 내외</td><td>23과 내외</td><td>220g쯤</td></tr>
+        <tr><td><b>한손</b> (중과)</td><td>38과 내외</td><td>—</td><td>260g쯤</td></tr>
+        <tr><td><b>한아름</b> (대과)</td><td>32과 내외</td><td>16과 내외</td><td>310g쯤</td></tr>
       </table>
       <ul>
-        <li><b>꼬마 사과</b>: 한 번에 한 개를 다 먹기 좋습니다. 아이 간식, 도시락, 껍질째 드시는 분께 맞습니다.</li>
-        <li><b>소과</b>: 집에서 깎아 먹기 가장 무난한 크기입니다.</li>
-        <li><b>중대과</b>: 손에 꽉 차는 큰 사과입니다. 선물이나 차례상에 좋습니다.</li>
+        <li><b>한입</b>: 한 번에 한 개를 다 먹기 좋습니다. 아이 간식, 도시락, 껍질째 드시는 분께 맞습니다.</li>
+        <li><b>한손</b>: 집에서 깎아 먹기 가장 무난한 크기입니다.</li>
+        <li><b>한아름</b>: 손에 꽉 차는 큰 사과입니다. 선물이나 차례상에 좋습니다.</li>
       </ul>
       <p>아래는 10kg 상자를 열었을 때 모습입니다. 받침에 한 개씩 앉혀 2단으로 담습니다.</p>
-      <img src="detail_box46.jpg" alt="10kg 꼬마 사과 46과 상자" loading="lazy">
-      <div class="cap">꼬마 사과 10kg · 한 단에 23개, 2단 46과</div>
-      <img src="detail_box38.jpg" alt="10kg 소과 38과 상자" loading="lazy">
-      <div class="cap">소과 10kg · 한 단에 19개, 2단 38과</div>
-      <img src="detail_box32.jpg" alt="10kg 중대과 32과 상자" loading="lazy">
-      <div class="cap">중대과 10kg · 한 단에 16개, 2단 32과</div>
+      <img src="detail_box46.jpg" alt="10kg 한입 사과 상자" loading="lazy">
+      <div class="cap">한입(소과) 10kg · 46과 내외</div>
+      <img src="detail_box38.jpg" alt="10kg 한손 사과 상자" loading="lazy">
+      <div class="cap">한손(중과) 10kg · 38과 내외</div>
+      <img src="detail_box32.jpg" alt="10kg 한아름 사과 상자" loading="lazy">
+      <div class="cap">한아름(대과) 10kg · 32과 내외</div>
     </section>
     <section>
       <h2>이렇게 보내 드립니다</h2>
@@ -260,6 +261,7 @@
             addr:'entry.333321816', qty:'entry.1858910001', memo:'entry.2123096425' };
   var PRICES = { '10kg 46과': 49000, '10kg 38과': 69000, '10kg 32과': 79000, '5kg 23과': 29000, '5kg 16과': 45000 };
   var DISC = { '10kg 46과': 45000, '5kg 23과': 26000 };   // 이웃 할인코드가 맞을 때만 적용 (작은 사과만)
+  var NAMES = { '46과': '한입', '23과': '한입', '38과': '한손', '32과': '한아름', '16과': '한아름' };
   var CODES = [3355984641];                               // 코드 글자는 소스에 두지 않고 해시만 둔다
   var PRICE = 49000, PROD = '10kg 46과', MAXQ = 10, CODED = false;
   var $ = function(id){ return document.getElementById(id); };
@@ -277,13 +279,13 @@
       b.appendChild(document.createTextNode(won(off(r.value) || PRICES[r.value])));
       if (r.checked) PROD = r.value;
     });
-    PRICE = off(PROD) || PRICES[PROD]; $('pname').textContent = '· ' + PROD; setQty(qty);
+    PRICE = off(PROD) || PRICES[PROD]; $('pname').textContent = '· ' + PROD.split(' ')[0] + ' ' + NAMES[PROD.split(' ')[1]]; setQty(qty);
   }
   Array.prototype.forEach.call(radios, function(r){ r.onchange = paint; });
   function applyCode(v, quiet){
     v = (v || '').replace(/\s/g, '').toUpperCase();
     CODED = CODES.indexOf(hash(v)) >= 0;
-    $('codemsg').textContent = CODED ? '이웃 특가가 적용되었습니다. 꼬마 사과 10kg·5kg이 할인됩니다.' : (v && !quiet ? '맞지 않는 코드입니다. 다시 확인해 주세요.' : '');
+    $('codemsg').textContent = CODED ? '이웃 특가가 적용되었습니다. 한입(소과) 10kg·5kg이 할인됩니다.' : (v && !quiet ? '맞지 않는 코드입니다. 다시 확인해 주세요.' : '');
     paint();
   }
   $('codego').onclick = function(){ applyCode($('code').value); };
@@ -362,7 +364,7 @@
 
   function showDone(o){
     var rows = [['받으시는 분', o.rname + ' · ' + o.rphone], ['주소', o.addr],
-                ['상품 · 금액', o.prod + ' ' + o.qty + '상자 · ' + won(Number(o.qty) * o.price)]];
+                ['상품 · 금액', o.prod.split(' ')[0] + ' ' + NAMES[o.prod.split(' ')[1]] + ' ' + o.qty + '상자 · ' + won(Number(o.qty) * o.price)]];
     var m = o.memo.replace(/^\[[^\]]+\]\s*/, '').replace(/^\(입금:[^)]*\)\s*/, '');
     if (m) rows.push(['배송 메모', m]);
     var dl = $('recap'); dl.textContent = '';
