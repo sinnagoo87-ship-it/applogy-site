@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>APPLOGY 청송 부사 주문</title>
-<meta property="og:title" content="APPLOGY 청송 부사 · 5kg 45,000원 / 10kg 75,000원 (택배비 포함)">
+<meta property="og:title" content="APPLOGY 청송 부사 · 5kg 29,000원부터 / 10kg 49,000원부터 (택배비 포함)">
 <meta property="og:description" content="부모님이 직접 농사지은 청송 부사. 여기서 바로 주문하세요.">
 <meta property="og:image" content="https://applogy.kr/order_hero.jpg">
 <meta property="og:type" content="website">
@@ -30,6 +30,11 @@
   .popt .nm small{display:block;font-size:14px;font-weight:500;color:var(--sub)}
   .popt b{font-size:22px;font-weight:800;color:var(--red);white-space:nowrap}
   .popt:has(input:checked){border-color:var(--red);background:#FFF8F6}
+  .grp{font-size:15px;font-weight:800;color:var(--sub);margin:6px 2px -2px}
+  .popt b s{display:block;font-size:14px;font-weight:500;color:var(--sub);text-align:right}
+  .code{margin-top:14px}
+  .code label{margin-top:0}
+  .codemsg{font-size:15px;font-weight:700;color:var(--red);margin-top:6px;min-height:1.4em}
   .spec{display:flex;justify-content:space-between;font-size:15px;margin-top:10px}
   .spec span:last-child{color:var(--red);font-weight:700}
   .note{margin:14px 20px 0;font-size:15px;color:var(--sub)}
@@ -78,6 +83,23 @@
   .bank .acct b{font-size:21px;letter-spacing:.01em;white-space:nowrap}
   .bank .btn2{padding:9px 14px;margin-left:auto}
   .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .chat{display:block;margin-top:12px;text-align:center;font-size:17px;font-weight:800;color:#3A1D1D;background:#FEE500;border-radius:12px;padding:13px;text-decoration:none}
+  .chat small{display:block;font-size:13.5px;font-weight:500}
+  .jump{display:block;margin:16px 20px 0;text-align:center;font-size:17px;font-weight:800;color:#fff;background:var(--red);
+    border-radius:12px;padding:14px;text-decoration:none}
+  .dt{margin:26px 0 0;border-top:8px solid #F1E9DA}
+  .dt section{padding:24px 20px 0}
+  .dt h2{font-size:21px;margin:0 0 8px}
+  .dt p{margin:0 0 10px;font-size:16.5px;word-break:keep-all}
+  .dt img{width:100%;display:block;border-radius:12px;margin:12px 0;background:#e9dfcf}
+  .dt .cap{font-size:14px;color:var(--sub);margin:-6px 0 10px}
+  .dt table{width:100%;border-collapse:collapse;font-size:15.5px;margin:10px 0}
+  .dt th,.dt td{border-bottom:1px solid var(--line);padding:9px 4px;text-align:left}
+  .dt th{font-size:13.5px;color:var(--sub);font-weight:600}
+  .dt td b{color:var(--red)}
+  .dt ul{margin:0 0 10px;padding-left:20px;font-size:16.5px}
+  .dt li{margin:4px 0;word-break:keep-all}
+  .dt a{color:var(--red);font-weight:700}
   footer{margin:26px 20px 0;font-size:13px;color:var(--sub);line-height:1.7}
 </style>
 </head>
@@ -89,12 +111,78 @@
     <div class="k">부모님이 직접 농사지은</div>
     <h1>청송 부사</h1>
     <div class="pick" role="radiogroup" aria-label="상품 선택">
-      <label class="popt"><input type="radio" name="prod" value="5kg" checked><span class="nm">5kg<small>18과 안팎</small></span><b>45,000원</b></label>
-      <label class="popt"><input type="radio" name="prod" value="10kg"><span class="nm">10kg<small>36과 안팎</small></span><b>75,000원</b></label>
+      <div class="grp">10kg</div>
+      <label class="popt"><input type="radio" name="prod" value="10kg 46과" checked><span class="nm">꼬마 사과<small>46과 안팎 · 한 번에 한 개씩</small></span><b></b></label>
+      <label class="popt"><input type="radio" name="prod" value="10kg 38과"><span class="nm">소과<small>38과 안팎</small></span><b></b></label>
+      <label class="popt"><input type="radio" name="prod" value="10kg 32과"><span class="nm">중대과<small>32과 안팎 · 큰 사과</small></span><b></b></label>
+      <div class="grp">5kg</div>
+      <label class="popt"><input type="radio" name="prod" value="5kg 23과"><span class="nm">꼬마 사과<small>23과 안팎</small></span><b></b></label>
+      <label class="popt"><input type="radio" name="prod" value="5kg 16과"><span class="nm">중대과<small>16과 안팎 · 큰 사과</small></span><b></b></label>
+    </div>
+    <div class="code">
+      <label for="code">할인코드 <span class="opt">(있으신 분만)</span></label>
+      <div class="row"><input type="text" id="code" maxlength="12" autocomplete="off" autocapitalize="characters" placeholder="코드 입력"><button type="button" class="btn2" id="codego">적용</button></div>
+      <div class="codemsg" id="codemsg" role="status"></div>
     </div>
     <div class="spec"><span>한 상자 기준</span><span>택배비 포함</span></div>
   </div>
-  <p class="note">무게는 맞춰 담고, 사과 크기에 따라 개수는 조금 달라질 수 있습니다.</p>
+  <p class="note">무게는 맞춰 담고, 사과 크기에 따라 개수는 조금 달라질 수 있습니다. 흠 없는 정품입니다.</p>
+  <a class="jump" href="#f">바로 주문하기</a>
+
+  <div class="dt">
+    <section>
+      <h2>부모님 과수원에서 바로 옵니다</h2>
+      <p>경북 청송에서 부모님이 직접 농사지은 부사입니다. 중간 상인 없이, 과수원에서 고른 사과를 그대로 상자에 담아 보내 드립니다.</p>
+      <img src="detail_farm.jpg" alt="수확 상자가 놓인 청송 사과 과수원" loading="lazy">
+      <p>늦가을 아침이면 집 앞 물가에 안개가 낍니다. 낮과 밤의 기온 차가 큰 곳이라, 서리가 내릴 즈음 딴 부사가 달고 단단합니다.</p>
+      <img src="detail_home.jpg" alt="물안개가 낀 청송 집 앞 아침 풍경" loading="lazy">
+      <div class="cap">11월 27일 아침, 청송 집 앞</div>
+    </section>
+    <section>
+      <h2>크기 고르는 법</h2>
+      <p>모두 흠 없는 정품이고, 맛은 같습니다. 크기만 다릅니다.</p>
+      <table>
+        <tr><th>크기</th><th>10kg</th><th>5kg</th><th>한 개 무게</th></tr>
+        <tr><td><b>꼬마 사과</b></td><td>46과 안팎</td><td>23과 안팎</td><td>220g쯤</td></tr>
+        <tr><td><b>소과</b></td><td>38과 안팎</td><td>—</td><td>260g쯤</td></tr>
+        <tr><td><b>중대과</b></td><td>32과 안팎</td><td>16과 안팎</td><td>310g쯤</td></tr>
+      </table>
+      <ul>
+        <li><b>꼬마 사과</b>: 한 번에 한 개를 다 먹기 좋습니다. 아이 간식, 도시락, 껍질째 드시는 분께 맞습니다.</li>
+        <li><b>소과</b>: 집에서 깎아 먹기 가장 무난한 크기입니다.</li>
+        <li><b>중대과</b>: 손에 꽉 차는 큰 사과입니다. 선물이나 차례상에 좋습니다.</li>
+      </ul>
+      <p>아래는 10kg 상자를 열었을 때 모습입니다. 받침에 한 개씩 앉혀 2단으로 담습니다.</p>
+      <img src="detail_box46.jpg" alt="10kg 꼬마 사과 46과 상자" loading="lazy">
+      <div class="cap">꼬마 사과 10kg · 한 단에 23개, 2단 46과</div>
+      <img src="detail_box38.jpg" alt="10kg 소과 38과 상자" loading="lazy">
+      <div class="cap">소과 10kg · 한 단에 19개, 2단 38과</div>
+      <img src="detail_box32.jpg" alt="10kg 중대과 32과 상자" loading="lazy">
+      <div class="cap">중대과 10kg · 한 단에 16개, 2단 32과</div>
+    </section>
+    <section>
+      <h2>이렇게 보내 드립니다</h2>
+      <ul>
+        <li>주문하신 뒤 입금이 확인되면 순서대로 보냅니다.</li>
+        <li>청송에서 택배로 바로 보냅니다. 택배비는 가격에 들어 있습니다.</li>
+        <li>사과가 서로 부딪히지 않게 받침에 한 개씩 앉혀 담습니다.</li>
+        <li>받는 곳이 여러 군데면, 주문을 마친 뒤 "한 건 더 보내기"를 눌러 이어서 적으시면 됩니다.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>받으신 뒤 보관</h2>
+      <ul>
+        <li>받으시면 바로 냉장고나 베란다처럼 서늘한 곳에 두세요.</li>
+        <li>비닐봉지에 나눠 담아 두면 수분이 덜 빠져 오래 아삭합니다.</li>
+        <li>사과는 다른 과일과 채소를 빨리 익게 하니 따로 두시는 게 좋습니다.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>문제가 있으면</h2>
+      <p>받으신 사과가 상했거나 배송 중에 깨졌으면, 받으신 날 사진과 함께 알려 주세요. 다시 보내 드리거나 환불해 드립니다.</p>
+      <p>문의와 사과 소식은 카카오톡 <a href="https://open.kakao.com/o/gtKTGSYi" target="_blank" rel="noopener">애플로지 청송사과 소식방</a>에서 받습니다.</p>
+    </section>
+  </div>
 
   <form id="f" novalidate>
     <h2>주문하시는 분</h2>
@@ -121,12 +209,12 @@
     <div id="pc"></div>
     <input type="text" id="addr2" placeholder="상세 주소 (동·호수)" maxlength="60" style="margin-top:8px" autocomplete="off">
 
-    <h2 class="sp">수량 <span id="pname" style="font-weight:500;color:var(--sub);font-size:15px">· 5kg</span></h2>
+    <h2 class="sp">수량 <span id="pname" style="font-weight:500;color:var(--sub);font-size:15px"></span></h2>
     <div class="qty">
       <button type="button" id="minus" aria-label="한 상자 줄이기">−</button>
       <output id="q">1</output>
       <button type="button" id="plus" aria-label="한 상자 늘리기">+</button>
-      <span class="sum" id="sum">45,000원</span>
+      <span class="sum" id="sum"></span>
     </div>
 
     <label for="memo">배송 메모 <span class="opt">(선택)</span></label>
@@ -153,6 +241,7 @@
     <p style="margin:12px 0 0;font-size:15.5px">입금이 확인되면 순서대로 보내 드립니다. 입금하실 때 보내는 분 이름은 주문서에 적은 이름 그대로 해 주세요.</p>
     <dl id="recap"></dl>
     <button class="go" id="again" type="button">다른 곳으로 한 건 더 보내기</button>
+    <a class="chat" href="https://open.kakao.com/o/gtKTGSYi" target="_blank" rel="noopener">카카오톡 소식방 들어오기<small>다음 사과 소식과 이웃 특가를 먼저 알려 드려요</small></a>
   </div>
 
   <footer>
@@ -167,16 +256,37 @@
   var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSe7wc5ruX4WOOcMSOmp_wO76ank-y2NPBCp7QYcK3JOICDZqg/formResponse';
   var E = { oname:'entry.986738315', ophone:'entry.744559782', rname:'entry.652672960', rphone:'entry.847154553',
             addr:'entry.333321816', qty:'entry.1858910001', memo:'entry.2123096425' };
-  var PRICES = { '5kg': 45000, '10kg': 75000 }, PRICE = 45000, PROD = '5kg', MAXQ = 10;
+  var PRICES = { '10kg 46과': 49000, '10kg 38과': 69000, '10kg 32과': 79000, '5kg 23과': 29000, '5kg 16과': 45000 };
+  var DISC = { '10kg 46과': 45000, '5kg 23과': 26000 };   // 이웃 할인코드가 맞을 때만 적용 (작은 사과만)
+  var CODES = [3355984641];                               // 코드 글자는 소스에 두지 않고 해시만 둔다
+  var PRICE = 49000, PROD = '10kg 46과', MAXQ = 10, CODED = false;
   var $ = function(id){ return document.getElementById(id); };
   var qty = 1, zip = '';
 
   function won(n){ return n.toLocaleString('ko-KR') + '원'; }
   function setQty(n){ qty = Math.min(MAXQ, Math.max(1, n)); $('q').textContent = qty; $('sum').textContent = won(qty * PRICE); }
-  Array.prototype.forEach.call(document.getElementsByName('prod'), function(r){
-    r.onchange = function(){ PROD = r.value; PRICE = PRICES[PROD]; $('pname').textContent = '· ' + PROD; setQty(qty); };
-    if (r.checked) { PROD = r.value; PRICE = PRICES[PROD]; }
-  });
+  function off(k){ return CODED && DISC[k]; }
+  function hash(t){ var h = 5381; for (var i = 0; i < t.length; i++) h = ((h * 33) ^ t.charCodeAt(i)) >>> 0; return h; }
+  var radios = document.getElementsByName('prod');
+  function paint(){                              // 상품별 가격 표시와 합계를 다시 그림
+    Array.prototype.forEach.call(radios, function(r){
+      var b = r.parentNode.querySelector('b'); b.textContent = '';
+      if (off(r.value)) { var s = document.createElement('s'); s.textContent = won(PRICES[r.value]); b.appendChild(s); }
+      b.appendChild(document.createTextNode(won(off(r.value) || PRICES[r.value])));
+      if (r.checked) PROD = r.value;
+    });
+    PRICE = off(PROD) || PRICES[PROD]; $('pname').textContent = '· ' + PROD; setQty(qty);
+  }
+  Array.prototype.forEach.call(radios, function(r){ r.onchange = paint; });
+  function applyCode(v, quiet){
+    v = (v || '').replace(/\s/g, '').toUpperCase();
+    CODED = CODES.indexOf(hash(v)) >= 0;
+    $('codemsg').textContent = CODED ? '이웃 특가가 적용되었습니다. 꼬마 사과 10kg·5kg이 할인됩니다.' : (v && !quiet ? '맞지 않는 코드입니다. 다시 확인해 주세요.' : '');
+    paint();
+  }
+  $('codego').onclick = function(){ applyCode($('code').value); };
+  $('code').addEventListener('keydown', function(ev){ if (ev.key === 'Enter') { ev.preventDefault(); applyCode(this.value); } });
+  (function(){ var m = /[?&]code=([^&#]+)/.exec(location.search); if (m) { $('code').value = decodeURIComponent(m[1]); applyCode($('code').value, true); } else paint(); })();
   $('minus').onclick = function(){ setQty(qty - 1); };
   $('plus').onclick = function(){ setQty(qty + 1); };
 
@@ -237,7 +347,7 @@
       oname: val('oname'), ophone: val('ophone'),
       rname: same ? val('oname') : val('rname'), rphone: same ? val('ophone') : val('rphone'),
       addr: val('addr1') + ' ' + val('addr2'), qty: String(qty), prod: PROD, price: PRICE,
-      memo: ('[' + PROD + '] ' + (val('payer') && val('payer') !== val('oname') ? '(입금:' + val('payer') + ') ' : '') + val('memo')).trim()
+      memo: ('[' + PROD + (off(PROD) ? ' 이웃' : '') + '] ' + (val('payer') && val('payer') !== val('oname') ? '(입금:' + val('payer') + ') ' : '') + val('memo')).trim()
     };
     var body = new URLSearchParams();
     Object.keys(E).forEach(function(k){ body.append(E[k], o[k]); });
